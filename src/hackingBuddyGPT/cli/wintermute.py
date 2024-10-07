@@ -1,10 +1,12 @@
 import argparse
 import sys
-
+from dotenv import load_dotenv
+import os
 from hackingBuddyGPT.usecases.base import use_cases
 
 
 def main():
+    load_dotenv()
     parser = argparse.ArgumentParser()
     subparser = parser.add_subparsers(required=True)
     for name, use_case in use_cases.items():
